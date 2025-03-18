@@ -12,18 +12,27 @@ fruits = ["Grape", "Apple", "Lemon", "Cherry", "Date", "Elderberry", "Fig",  "Ho
 
 
 # Remove the third fruit from the list using the pop() method.
-
+fruits.pop(2)
+print(fruits)
 
 # Use the remove() method to remove a fruit of your choice from the list.
-
+fruits.remove("Date")
+print(fruits)
 
 # Search for "Apple" in the list and print a message saying whether or not it was found.
-
+try:
+    position = fruits.index("Fig")
+    print(f"Fig is at {position} in list")
+except:
+    print("Fig not found")
 
 # Sort the List in alphabetical order.
-
+fruits.sort()
+print(fruits)
 
 # Create a new list that contains a slice of the first 5 items
-
+first_half = fruits[0:3]
 
 # Print out the new sliced list using a for loop
+for fruit in first_half:
+    print(fruit)
