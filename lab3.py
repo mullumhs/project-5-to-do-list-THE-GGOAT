@@ -32,5 +32,5 @@ else:
     print("Average grade is passing.")
 
 grades.sort()
-print("Highest Grade:", grades[5])
+print("Highest Grade:", grades[len(grades) - 1])
 
