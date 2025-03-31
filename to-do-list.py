@@ -17,10 +17,13 @@ def get_number():
         except ValueError:
             is_dig = False
             print("Invaild try again?")
+def print_divider():
+    print("-" * 100)
 
 def add_task():
     print_list()
     task_list.append(input("Enter a task: "))
+    
 
 def remove_task():
     print_list()
@@ -28,17 +31,30 @@ def remove_task():
         remove = get_number("Remove a task: ")
         task_list.pop(remove)
     except:
-       ("ENter vaild choice") 
+       ("Enter vaild choice") 
 
 def print_list():
     for task in task_list:
         print(task)
 
+def edit_task():
+    print_list()
+    var = input("what task to edit: ")
+    var_num = task_list.index(var)
+    change = input("Enter edited task: ")
+    try:
+        task_list[var_num] = change
+        print_list()
+    except:
+        print("Invaild Input, try again")    
+
 def menu():
         print_list()
-        print("1. Add to list\n2. Remove from list\n3. Print list\n4. Edit task")
+        
         while True: 
+            print("1. Add to list\n2. Remove from list\n3. Print list\n4. Edit task")
             choice = input("What function would you like to run: ")
+            print_divider()
             
             if choice == "1":
                 add_task()
@@ -51,17 +67,8 @@ def menu():
             
             elif choice == "4":
                 edit_task()
+            print_divider()
 
-def edit_task():
-    print_list()
-    var = input("what task to edit: ")
-    var_num = task_list.index(var)
-    change = input("Enter edited task:")
-    try:
-        task_list[var_num] = change
-        print_list()
-    except:
-        print("Invaild Input, try again")
 
 
 while True:
